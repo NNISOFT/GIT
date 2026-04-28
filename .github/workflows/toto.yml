@@ -1,0 +1,24 @@
+name: toto
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+    hello_world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello world action step
+              run: |
+                echo "Hello, world!"
+                ls -lah
+            - name: step 2
+              run: echo "Hello, world!"
+
+    hello_world2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello world action step
+              run: |
+                echo "Hello, world2!"
+                ls -lah
