@@ -2,7 +2,7 @@ name: toto
 
 on:
   push:
-    branches: [ master, Branche2 ]
+    branches: [ masterzzz, Branche2 ]
 
 jobs:
     hello_world:
