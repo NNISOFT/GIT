@@ -8,15 +8,27 @@ jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
-            - name: Job 1
-              run: echo "Job 1"
+            - name: Etape 1 - Création d'un fichier à télécharger
+              run: touch Atelecharger.txt
+            - name: Etape 2 - Upload
+              uses: actions/upload-artifact@v7
+              with:
+                name: Atelecharger.txt
+                path: ./Atelecharger.txt
 
     job2:
         needs: job1
         runs-on: ubuntu-latest
         steps:
-            - name: Job 2
-              run: echo "Job 2"
+            - name: Etape 1 - Affichage après création
+              run: ls -lah
+            - name: Etape 2 - Download Artifact
+              uses: actions/download-artifact@v8
+              with:
+                name: Atelecharger.txt
+                path: ./Downloads
+            - name: Etape 3 - Affichage final
+              run: ls -lah
 
     job3:
         needs: job1
