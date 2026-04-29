@@ -6,7 +6,7 @@ on:
   - cron: '0 * * * *'
   pull_request:
     types: [opened, reopened]
-    branches: [ master ]
+    branches: [ master, BranchePull ]
 
 jobs:
     hello_world:
