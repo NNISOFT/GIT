@@ -1,8 +1,11 @@
 name: toto
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
+    - cron: '0 * * * *'
   push:
-    branches: [ master, Branche2 ]
+    branches: [ masterzzz, Branche2 ]
 
 jobs:
     hello_world:
