@@ -2,7 +2,7 @@ name: Dependency example 4 jobs
 
 on:
   push:
-    branches: [ master ]
+    branches: [ BranchePull ]
 
 jobs:
     job1:
