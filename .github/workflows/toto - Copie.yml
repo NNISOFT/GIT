@@ -15,8 +15,11 @@ jobs:
         needs: job1
         runs-on: ubuntu-latest
         steps:
-            - name: Job 2
-              run: echo "Job 2"
+            - name: Download Artifact
+              uses: actions/download-artifact@v8
+              with:
+                name: Test.txt
+                path: ./Downloads
 
     job3:
         needs: job1
