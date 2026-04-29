@@ -15,11 +15,15 @@ jobs:
         needs: job1
         runs-on: ubuntu-latest
         steps:
-            - name: Download Artifact
+            - name: Etape 1 - Création d'un fichier à télécharger
+              run: touch Atelecharger.txt
+            - name: Etape 2 - Download Artifact
               uses: actions/download-artifact@v8
               with:
-                name: Test.txt
+                name: Atelecharger.txt
                 path: ./Downloads
+            - name: Etape 3 - Affichage
+              run: ls -lah
 
     job3:
         needs: job1
