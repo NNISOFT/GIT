@@ -1,24 +1,33 @@
-name: toto
+name: Dependency example 4 jobs
 
 on:
   push:
-    branches: [ Branche2 ]
+    branches: [ master ]
 
 jobs:
-    hello_world:
+    job1:
         runs-on: ubuntu-latest
         steps:
-            - name: Hello world action step
-              run: |
-                echo "Hello, world!"
-                ls -lah
-            - name: step 2
-              run: echo "Hello, world!"
+            - name: Job 1
+              run: echo "Job 1"
 
-    hello_world2:
+    job2:
+        needs: job1
         runs-on: ubuntu-latest
         steps:
-            - name: Hello world action step
-              run: |
-                echo "Hello, world2!"
-                ls -lah
+            - name: Job 2
+              run: echo "Job 2"
+
+    job3:
+        needs: job1
+        runs-on: ubuntu-latest
+        steps:
+            - name: Job 3
+              run: echo "Job 3"
+
+    job4:
+        needs: job3
+        runs-on: ubuntu-latest
+        steps:
+            - name: Job 4
+              run: echo "Job 4"
