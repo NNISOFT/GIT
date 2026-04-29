@@ -1,6 +1,9 @@
 name: toto
 
 on:
+  schedule:
+  - cron: '*/5 * * * *'
+  - cron: '0 * * * *'
   pull_request:
     types: [opened, reopened]
     branches: [ master ]
